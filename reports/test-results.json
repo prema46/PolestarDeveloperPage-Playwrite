@@ -1,0 +1,656 @@
+{
+  "config": {
+    "configFile": "C:\\Users\\dptes.INDIA\\projects\\PoleStar-Playwrite\\playwright.config.js",
+    "rootDir": "C:/Users/dptes.INDIA/projects/PoleStar-Playwrite/tests",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 3
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "html",
+        {
+          "outputFolder": "reports"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "reports/test-results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 15000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "C:/Users/dptes.INDIA/projects/PoleStar-Playwrite/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {},
+        "id": "chrome",
+        "name": "chrome",
+        "testDir": "C:/Users/dptes.INDIA/projects/PoleStar-Playwrite/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "version": "1.48.2",
+    "workers": 4,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "test\\gorest-api-Negativetests.spec.js",
+      "file": "test/gorest-api-Negativetests.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Negative Test - Unauthorized request with invalid token",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chrome",
+              "projectName": "chrome",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "status": "passed",
+                  "duration": 1268,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "Authorization token is set up before all tests\n"
+                    },
+                    {
+                      "text": "{ message: \u001b[32m'Invalid token'\u001b[39m }\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2024-11-13T13:10:31.702Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "7fb0d98bdb50e37fc068-1082b99ce1be16e6cecd",
+          "file": "test/gorest-api-Negativetests.spec.js",
+          "line": 11,
+          "column": 1
+        },
+        {
+          "title": "Negative Test - Missing required field in POST request",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chrome",
+              "projectName": "chrome",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "status": "passed",
+                  "duration": 463,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2024-11-13T13:10:33.056Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "7fb0d98bdb50e37fc068-898ee439966c1f8cda97",
+          "file": "test/gorest-api-Negativetests.spec.js",
+          "line": 29,
+          "column": 1
+        },
+        {
+          "title": "Negative Test - Invalid User ID in PUT request",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chrome",
+              "projectName": "chrome",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "status": "passed",
+                  "duration": 439,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "{ message: \u001b[32m'Resource not found'\u001b[39m }\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2024-11-13T13:10:33.533Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "7fb0d98bdb50e37fc068-febc788152bdde96ea9c",
+          "file": "test/gorest-api-Negativetests.spec.js",
+          "line": 50,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "test\\gorest-api-tests.spec.js",
+      "file": "test/gorest-api-tests.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "GoRest API Positive testcases",
+          "file": "test/gorest-api-tests.spec.js",
+          "line": 7,
+          "column": 6,
+          "specs": [
+            {
+              "title": "Verify user data was posted correctly",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chrome",
+                  "projectName": "chrome",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "status": "passed",
+                      "duration": 476,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "User successfully created with ID: \u001b[33m7521673\u001b[39m\n"
+                        },
+                        {
+                          "text": "User successfully created with ID: \u001b[33m7521673\u001b[39m\n"
+                        },
+                        {
+                          "text": "Verified created user details: {\n  id: \u001b[33m7521673\u001b[39m,\n  name: \u001b[32m'Deeessses'\u001b[39m,\n  email: \u001b[32m'john.dee.1731503431@example.com'\u001b[39m,\n  gender: \u001b[32m'female'\u001b[39m,\n  status: \u001b[32m'active'\u001b[39m\n}\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2024-11-13T13:10:31.858Z",
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "54e315fe2384c985391c-99798ca027a089200d98",
+              "file": "test/gorest-api-tests.spec.js",
+              "line": 58,
+              "column": 1
+            },
+            {
+              "title": "Update user data and verify update",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chrome",
+                  "projectName": "chrome",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "status": "passed",
+                      "duration": 499,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Updated user details: {\n  email: \u001b[32m'john.dee.updated@example.com'\u001b[39m,\n  name: \u001b[32m'John Dee Updated'\u001b[39m,\n  id: \u001b[33m7521673\u001b[39m,\n  gender: \u001b[32m'female'\u001b[39m,\n  status: \u001b[32m'active'\u001b[39m\n}\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2024-11-13T13:10:33.722Z",
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "54e315fe2384c985391c-73230191b9265aa249f9",
+              "file": "test/gorest-api-tests.spec.js",
+              "line": 72,
+              "column": 1
+            },
+            {
+              "title": "Verify updated user details",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chrome",
+                  "projectName": "chrome",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "status": "passed",
+                      "duration": 776,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Verified updated user details: {\n  id: \u001b[33m7521673\u001b[39m,\n  name: \u001b[32m'John Dee Updated'\u001b[39m,\n  email: \u001b[32m'john.dee.updated@example.com'\u001b[39m,\n  gender: \u001b[32m'female'\u001b[39m,\n  status: \u001b[32m'active'\u001b[39m\n}\n"
+                        },
+                        {
+                          "text": "Response Status Code: 204\n"
+                        },
+                        {
+                          "text": "Response Status Code: 404\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2024-11-13T13:10:34.244Z",
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "54e315fe2384c985391c-9a8e216ebe6e2ec37fff",
+              "file": "test/gorest-api-tests.spec.js",
+              "line": 94,
+              "column": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "test\\polestarDeveloperTest.spec.js",
+      "file": "test/polestarDeveloperTest.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Polestar Developer Page Tests",
+          "file": "test/polestarDeveloperTest.spec.js",
+          "line": 6,
+          "column": 6,
+          "specs": [
+            {
+              "title": "Verify logo appears",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chrome",
+                  "projectName": "chrome",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "status": "passed",
+                      "duration": 6804,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Cookie popup found, closing it...\n"
+                        },
+                        {
+                          "text": "Button is enabled: true\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2024-11-13T13:10:31.733Z",
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "71e2e01f8396c359c226-1120bee764f42267db14",
+              "file": "test/polestarDeveloperTest.spec.js",
+              "line": 23,
+              "column": 3
+            },
+            {
+              "title": "Verify banner and responsiveness",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chrome",
+                  "projectName": "chrome",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "status": "failed",
+                      "duration": 32394,
+                      "error": {
+                        "message": "Error: \u001b[31mScreenshot comparison failed:\u001b[39m\n\n  1764575 pixels (ratio 0.72 of all image pixels) are different.\n\nExpected: \u001b[33mC:\\Users\\dptes.INDIA\\projects\\PoleStar-Playwrite\\tests\\test\\polestarDeveloperTest.spec.js-snapshots\\Polestar-Developer-Page-Tests-Verify-banner-and-responsiveness-1-chrome-win32.png\u001b[39m\nReceived: \u001b[33mC:\\Users\\dptes.INDIA\\projects\\PoleStar-Playwrite\\test-results\\test-polestarDeveloperTest-dc928-y-banner-and-responsiveness-chrome\\Polestar-Developer-Page-Te-8496a-banner-and-responsiveness-1-actual.png\u001b[39m\n    Diff: \u001b[33mC:\\Users\\dptes.INDIA\\projects\\PoleStar-Playwrite\\test-results\\test-polestarDeveloperTest-dc928-y-banner-and-responsiveness-chrome\\Polestar-Developer-Page-Te-8496a-banner-and-responsiveness-1-diff.png\u001b[39m\n\nCall log:\n  \u001b[2m- expect.toHaveScreenshot with timeout 5000ms\u001b[22m\n\u001b[2m  -   verifying given screenshot expectation\u001b[22m\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m  -   disabled all CSS animations\u001b[22m\n\u001b[2m  - waiting for fonts to load...\u001b[22m\n\u001b[2m  - fonts loaded\u001b[22m\n\u001b[2m  - 1764824 pixels (ratio 0.72 of all image pixels) are different.\u001b[22m\n\u001b[2m  - waiting 100ms before taking screenshot\u001b[22m\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m  -   disabled all CSS animations\u001b[22m\n\u001b[2m  - waiting for fonts to load...\u001b[22m\n\u001b[2m  - fonts loaded\u001b[22m\n\u001b[2m  - captured a stable screenshot\u001b[22m\n\u001b[2m  - 1764575 pixels (ratio 0.72 of all image pixels) are different.\u001b[22m\n",
+                        "stack": "Error: \u001b[31mScreenshot comparison failed:\u001b[39m\n\n  1764575 pixels (ratio 0.72 of all image pixels) are different.\n\nExpected: \u001b[33mC:\\Users\\dptes.INDIA\\projects\\PoleStar-Playwrite\\tests\\test\\polestarDeveloperTest.spec.js-snapshots\\Polestar-Developer-Page-Tests-Verify-banner-and-responsiveness-1-chrome-win32.png\u001b[39m\nReceived: \u001b[33mC:\\Users\\dptes.INDIA\\projects\\PoleStar-Playwrite\\test-results\\test-polestarDeveloperTest-dc928-y-banner-and-responsiveness-chrome\\Polestar-Developer-Page-Te-8496a-banner-and-responsiveness-1-actual.png\u001b[39m\n    Diff: \u001b[33mC:\\Users\\dptes.INDIA\\projects\\PoleStar-Playwrite\\test-results\\test-polestarDeveloperTest-dc928-y-banner-and-responsiveness-chrome\\Polestar-Developer-Page-Te-8496a-banner-and-responsiveness-1-diff.png\u001b[39m\n\nCall log:\n  \u001b[2m- expect.toHaveScreenshot with timeout 5000ms\u001b[22m\n\u001b[2m  -   verifying given screenshot expectation\u001b[22m\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m  -   disabled all CSS animations\u001b[22m\n\u001b[2m  - waiting for fonts to load...\u001b[22m\n\u001b[2m  - fonts loaded\u001b[22m\n\u001b[2m  - 1764824 pixels (ratio 0.72 of all image pixels) are different.\u001b[22m\n\u001b[2m  - waiting 100ms before taking screenshot\u001b[22m\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m  -   disabled all CSS animations\u001b[22m\n\u001b[2m  - waiting for fonts to load...\u001b[22m\n\u001b[2m  - fonts loaded\u001b[22m\n\u001b[2m  - captured a stable screenshot\u001b[22m\n\u001b[2m  - 1764575 pixels (ratio 0.72 of all image pixels) are different.\u001b[22m\n\n    at PolestarDevPage.checkResponsiveness (C:\\Users\\dptes.INDIA\\projects\\PoleStar-Playwrite\\tests\\page\\polestarDeveloperPage.js:59:31)\n    at C:\\Users\\dptes.INDIA\\projects\\PoleStar-Playwrite\\tests\\test\\polestarDeveloperTest.spec.js:32:5",
+                        "location": {
+                          "file": "C:\\Users\\dptes.INDIA\\projects\\PoleStar-Playwrite\\tests\\page\\polestarDeveloperPage.js",
+                          "column": 31,
+                          "line": 59
+                        },
+                        "snippet": "\u001b[90m   at \u001b[39mpage\\polestarDeveloperPage.js:59\n\n\u001b[0m \u001b[90m 57 |\u001b[39m       \n \u001b[90m 58 |\u001b[39m       \u001b[90m// Validate screenshot\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 59 |\u001b[39m       \u001b[36mawait\u001b[39m expect(\u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage)\u001b[33m.\u001b[39mtoHaveScreenshot({\n \u001b[90m    |\u001b[39m                               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 60 |\u001b[39m         path\u001b[33m:\u001b[39m screenshotPath\u001b[33m,\u001b[39m\n \u001b[90m 61 |\u001b[39m         fullPage\u001b[33m:\u001b[39m \u001b[36mtrue\u001b[39m\u001b[33m,\u001b[39m\n \u001b[90m 62 |\u001b[39m         threshold\u001b[33m:\u001b[39m \u001b[35m0.2\u001b[39m \u001b[90m// Tolerance for slight rendering differences\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\dptes.INDIA\\projects\\PoleStar-Playwrite\\tests\\page\\polestarDeveloperPage.js",
+                            "column": 31,
+                            "line": 59
+                          },
+                          "message": "Error: \u001b[31mScreenshot comparison failed:\u001b[39m\n\n  1764575 pixels (ratio 0.72 of all image pixels) are different.\n\nExpected: \u001b[33mC:\\Users\\dptes.INDIA\\projects\\PoleStar-Playwrite\\tests\\test\\polestarDeveloperTest.spec.js-snapshots\\Polestar-Developer-Page-Tests-Verify-banner-and-responsiveness-1-chrome-win32.png\u001b[39m\nReceived: \u001b[33mC:\\Users\\dptes.INDIA\\projects\\PoleStar-Playwrite\\test-results\\test-polestarDeveloperTest-dc928-y-banner-and-responsiveness-chrome\\Polestar-Developer-Page-Te-8496a-banner-and-responsiveness-1-actual.png\u001b[39m\n    Diff: \u001b[33mC:\\Users\\dptes.INDIA\\projects\\PoleStar-Playwrite\\test-results\\test-polestarDeveloperTest-dc928-y-banner-and-responsiveness-chrome\\Polestar-Developer-Page-Te-8496a-banner-and-responsiveness-1-diff.png\u001b[39m\n\nCall log:\n  \u001b[2m- expect.toHaveScreenshot with timeout 5000ms\u001b[22m\n\u001b[2m  -   verifying given screenshot expectation\u001b[22m\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m  -   disabled all CSS animations\u001b[22m\n\u001b[2m  - waiting for fonts to load...\u001b[22m\n\u001b[2m  - fonts loaded\u001b[22m\n\u001b[2m  - 1764824 pixels (ratio 0.72 of all image pixels) are different.\u001b[22m\n\u001b[2m  - waiting 100ms before taking screenshot\u001b[22m\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m  -   disabled all CSS animations\u001b[22m\n\u001b[2m  - waiting for fonts to load...\u001b[22m\n\u001b[2m  - fonts loaded\u001b[22m\n\u001b[2m  - captured a stable screenshot\u001b[22m\n\u001b[2m  - 1764575 pixels (ratio 0.72 of all image pixels) are different.\u001b[22m\n\n\n\u001b[90m   at \u001b[39mpage\\polestarDeveloperPage.js:59\n\n\u001b[0m \u001b[90m 57 |\u001b[39m       \n \u001b[90m 58 |\u001b[39m       \u001b[90m// Validate screenshot\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 59 |\u001b[39m       \u001b[36mawait\u001b[39m expect(\u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage)\u001b[33m.\u001b[39mtoHaveScreenshot({\n \u001b[90m    |\u001b[39m                               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 60 |\u001b[39m         path\u001b[33m:\u001b[39m screenshotPath\u001b[33m,\u001b[39m\n \u001b[90m 61 |\u001b[39m         fullPage\u001b[33m:\u001b[39m \u001b[36mtrue\u001b[39m\u001b[33m,\u001b[39m\n \u001b[90m 62 |\u001b[39m         threshold\u001b[33m:\u001b[39m \u001b[35m0.2\u001b[39m \u001b[90m// Tolerance for slight rendering differences\u001b[39m\u001b[0m\n\n\u001b[2m    at PolestarDevPage.checkResponsiveness (C:\\Users\\dptes.INDIA\\projects\\PoleStar-Playwrite\\tests\\page\\polestarDeveloperPage.js:59:31)\u001b[22m\n\u001b[2m    at C:\\Users\\dptes.INDIA\\projects\\PoleStar-Playwrite\\tests\\test\\polestarDeveloperTest.spec.js:32:5\u001b[22m"
+                        }
+                      ],
+                      "stdout": [
+                        {
+                          "text": "No cookie popup found\n"
+                        },
+                        {
+                          "text": "Testing viewport: 1920x1080\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2024-11-13T13:10:39.017Z",
+                      "attachments": [
+                        {
+                          "name": "Polestar-Developer-Page-Te-8496a-banner-and-responsiveness-1-expected.png",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\dptes.INDIA\\projects\\PoleStar-Playwrite\\tests\\test\\polestarDeveloperTest.spec.js-snapshots\\Polestar-Developer-Page-Tests-Verify-banner-and-responsiveness-1-chrome-win32.png"
+                        },
+                        {
+                          "name": "Polestar-Developer-Page-Te-8496a-banner-and-responsiveness-1-actual.png",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\dptes.INDIA\\projects\\PoleStar-Playwrite\\test-results\\test-polestarDeveloperTest-dc928-y-banner-and-responsiveness-chrome\\Polestar-Developer-Page-Te-8496a-banner-and-responsiveness-1-actual.png"
+                        },
+                        {
+                          "name": "Polestar-Developer-Page-Te-8496a-banner-and-responsiveness-1-diff.png",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\dptes.INDIA\\projects\\PoleStar-Playwrite\\test-results\\test-polestarDeveloperTest-dc928-y-banner-and-responsiveness-chrome\\Polestar-Developer-Page-Te-8496a-banner-and-responsiveness-1-diff.png"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\dptes.INDIA\\projects\\PoleStar-Playwrite\\tests\\page\\polestarDeveloperPage.js",
+                        "column": 31,
+                        "line": 59
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "71e2e01f8396c359c226-be31fc674bdb41d5b846",
+              "file": "test/polestarDeveloperTest.spec.js",
+              "line": 29,
+              "column": 3
+            },
+            {
+              "title": "Menu - All links are valid and direct to the expected page",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chrome",
+                  "projectName": "chrome",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "status": "timedOut",
+                      "duration": 60075,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 60000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 60000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 60000ms exceeded.\u001b[39m"
+                        }
+                      ],
+                      "stdout": [
+                        {
+                          "text": "No cookie popup found\n"
+                        },
+                        {
+                          "text": "Link: https://www.polestar.com/global/developer/get-started/#main-content could not be reached. Error: TypeError: Cannot read properties of null (reading 'status')\n"
+                        },
+                        {
+                          "text": "Link: https://www.polestar.com/global/ is valid with status 200\n"
+                        },
+                        {
+                          "text": "Link: https://www.polestar.com/global/spaces/ is valid with status 200\n"
+                        },
+                        {
+                          "text": "Link: https://www.polestar.com/global/polestar-2/ is valid with status 200\n"
+                        },
+                        {
+                          "text": "Link: https://www.polestar.com/global/polestar-2/exterior/ is valid with status 200\n"
+                        },
+                        {
+                          "text": "Link: https://www.polestar.com/global/polestar-3/ is valid with status 200\n"
+                        },
+                        {
+                          "text": "Link: https://www.polestar.com/global/polestar-3/exterior/ is valid with status 200\n"
+                        },
+                        {
+                          "text": "Link: https://www.polestar.com/global/polestar-4/ is valid with status 200\n"
+                        },
+                        {
+                          "text": "Link: https://www.polestar.com/global/charging/ is valid with status 200\n"
+                        },
+                        {
+                          "text": "Link: https://www.polestar.com/global/charging/public-charging/ is valid with status 200\n"
+                        },
+                        {
+                          "text": "Link: https://www.polestar.com/global/charging/home-charging/ is valid with status 200\n"
+                        },
+                        {
+                          "text": "Link: https://www.polestar.com/global/spaces/ is valid with status 200\n"
+                        },
+                        {
+                          "text": "Link: https://www.polestar.com/global/news/ is valid with status 200\n"
+                        },
+                        {
+                          "text": "Link: https://www.polestar.com/global/sustainability/ is valid with status 200\n"
+                        },
+                        {
+                          "text": "Link: https://www.polestar.com/global/about/ is valid with status 200\n"
+                        },
+                        {
+                          "text": "Link: https://www.polestar.com/global/sign-up-newsletter/ is valid with status 200\n"
+                        },
+                        {
+                          "text": "Link: https://additionals.polestar.com/ is valid with status 200\n"
+                        },
+                        {
+                          "text": "Link: https://www.polestar.com/global/experiences/ is valid with status 200\n"
+                        },
+                        {
+                          "text": "Link: https://www.polestar.com/global/ is valid with status 200\n"
+                        },
+                        {
+                          "text": "Link: https://www.polestar.com/global/sign-up-newsletter/?redirect-url=/global/developer/get-started/ is valid with status 200\n"
+                        },
+                        {
+                          "text": "Link: https://www.polestar.com/global/ is valid with status 200\n"
+                        },
+                        {
+                          "text": "Link: https://www.polestar.com/global/polestar-1/ is valid with status 200\n"
+                        },
+                        {
+                          "text": "Link: https://www.polestar.com/global/polestar-2/ is valid with status 200\n"
+                        },
+                        {
+                          "text": "Link: https://www.polestar.com/global/polestar-3/ is valid with status 200\n"
+                        },
+                        {
+                          "text": "Link: https://www.polestar.com/global/polestar-4/ is valid with status 200\n"
+                        },
+                        {
+                          "text": "Link: https://www.polestar.com/global/polestar-5/ could not be reached. Error: Error: page.goto: net::ERR_ABORTED at https://www.polestar.com/global/polestar-5/\nCall log:\n  \u001b[2m- navigating to \"https://www.polestar.com/global/polestar-5/\", waiting until \"load\"\u001b[22m\n\n"
+                        },
+                        {
+                          "text": "Link: https://www.polestar.com/global/polestar-6/ could not be reached. Error: Error: page.goto: Target page, context or browser has been closed\n"
+                        },
+                        {
+                          "text": "Link: https://www.polestar.com/global/polestar-2-bst-edition-230/ could not be reached. Error: Error: page.goto: Target page, context or browser has been closed\n"
+                        },
+                        {
+                          "text": "Link: https://www.polestar.com/global/spaces/ could not be reached. Error: Error: page.goto: Target page, context or browser has been closed\n"
+                        },
+                        {
+                          "text": "Link: https://www.polestar.com/global/charging/ could not be reached. Error: Error: page.goto: Target page, context or browser has been closed\n"
+                        },
+                        {
+                          "text": "Link: https://www.polestar.com/global/events/ could not be reached. Error: Error: page.goto: Target page, context or browser has been closed\n"
+                        },
+                        {
+                          "text": "Link: https://www.polestar.com/global/news/ could not be reached. Error: Error: page.goto: Target page, context or browser has been closed\n"
+                        },
+                        {
+                          "text": "Link: https://www.polestar.com/global/sustainability/ could not be reached. Error: Error: page.goto: Target page, context or browser has been closed\n"
+                        },
+                        {
+                          "text": "Link: https://www.polestar.com/global/about/ could not be reached. Error: Error: page.goto: Target page, context or browser has been closed\n"
+                        },
+                        {
+                          "text": "Link: https://www.polestar.com/global/about/careers/ could not be reached. Error: Error: page.goto: Target page, context or browser has been closed\n"
+                        },
+                        {
+                          "text": "Link: https://www.polestar.com/global/polestar-design-contest/ could not be reached. Error: Error: page.goto: Target page, context or browser has been closed\n"
+                        },
+                        {
+                          "text": "Link: https://media.polestar.com/global/en could not be reached. Error: Error: page.goto: Target page, context or browser has been closed\n"
+                        },
+                        {
+                          "text": "Link: https://investors.polestar.com/ could not be reached. Error: Error: page.goto: Target page, context or browser has been closed\n"
+                        },
+                        {
+                          "text": "Link: https://www.polestar.com/global/vulnerability-disclosure/ could not be reached. Error: Error: page.goto: Target page, context or browser has been closed\n"
+                        },
+                        {
+                          "text": "Link: https://www.instagram.com/polestarcars/ could not be reached. Error: Error: page.goto: Target page, context or browser has been closed\n"
+                        },
+                        {
+                          "text": "Link: https://www.facebook.com/PolestarCars/ could not be reached. Error: Error: page.goto: Target page, context or browser has been closed\n"
+                        },
+                        {
+                          "text": "Link: https://www.youtube.com/polestarcars could not be reached. Error: Error: page.goto: Target page, context or browser has been closed\n"
+                        },
+                        {
+                          "text": "Link: https://www.linkedin.com/company/polestarcars/posts/ could not be reached. Error: Error: page.goto: Target page, context or browser has been closed\n"
+                        },
+                        {
+                          "text": "Link: https://twitter.com/PolestarCars could not be reached. Error: Error: page.goto: Target page, context or browser has been closed\n"
+                        },
+                        {
+                          "text": "Link: https://www.instagram.com/polestardesigncommunity/?hl=en could not be reached. Error: Error: page.goto: Target page, context or browser has been closed\n"
+                        },
+                        {
+                          "text": "Link: https://polestar.com/global/legal could not be reached. Error: Error: page.goto: Target page, context or browser has been closed\n"
+                        },
+                        {
+                          "text": "Link: https://polestar.com/global/legal/ethics/ could not be reached. Error: Error: page.goto: Target page, context or browser has been closed\n"
+                        },
+                        {
+                          "text": "Link: https://polestar.com/global/legal/privacy/cookies/ could not be reached. Error: Error: page.goto: Target page, context or browser has been closed\n"
+                        },
+                        {
+                          "text": "Link: https://www.polestar.com/global/accessibility/ could not be reached. Error: Error: page.goto: Target page, context or browser has been closed\n"
+                        },
+                        {
+                          "text": "Link: https://www.onetrust.com/products/cookie-consent/ could not be reached. Error: Error: page.goto: Target page, context or browser has been closed\n"
+                        },
+                        {
+                          "text": "Link: https://legal.polestar.com/uk/cookies/ could not be reached. Error: Error: page.goto: Target page, context or browser has been closed\n"
+                        },
+                        {
+                          "text": "Link: https://www.onetrust.com/products/cookie-consent/ could not be reached. Error: Error: page.goto: Target page, context or browser has been closed\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2024-11-13T13:11:13.126Z",
+                      "attachments": []
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "71e2e01f8396c359c226-19876b2a01cc06f9e940",
+              "file": "test/polestarDeveloperTest.spec.js",
+              "line": 36,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2024-11-13T13:10:29.033Z",
+    "duration": 104715.76999999999,
+    "expected": 7,
+    "skipped": 0,
+    "unexpected": 2,
+    "flaky": 0
+  }
+}
