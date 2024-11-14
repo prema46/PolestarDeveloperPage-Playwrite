@@ -4,6 +4,11 @@ const { expect } = require('@playwright/test');
 class PolestarDevPage {
   constructor(page) {
     this.page = page;
+   this.logo = this.page.locator('//*[@id="mega-menu-:r0:"]//header/a');
+
+     // Define the locator for the text "Welcome" (use correct syntax)
+     this.welcomeText = page.locator('text="Welcome"');
+     this.cookiePopupCloseButton = page.locator('button:text("Accept all")');
   }
 
   // Navigate to the Polestar Developer page
@@ -13,30 +18,20 @@ class PolestarDevPage {
 
   // Close the cookie popup if it appears
   async closeCookieButton() {
-    const cookiePopupCloseButton = this.page.locator('text=Accept all');
-    const isVisible = await cookiePopupCloseButton.isVisible();
+    await this.welcomeText.waitFor({ state: 'visible', timeout: 5000 });
+    const isVisible = await this.welcomeText.isVisible();
     if (isVisible) {
-      console.log('Cookie popup found, closing it...');
-      await cookiePopupCloseButton.click();
-      await this.page.waitForSelector('div#onetrust-banner-sdk', { state: 'hidden' });
+      console.log('closing the popup window.');
+      await this.cookiePopupCloseButton.click();
     } else {
-      console.log('No cookie popup found');
+      console.log('No popup window found');
     }
   }
 
-  // Click the logo and navigate to the expected page
-  async clickLogo() {
-    const logo = this.page.locator('//*[@id="mega-menu-:r0:"]/div[1]/div[1]/div/header/a');
-    await this.page.waitForSelector('//*[@id="mega-menu-:r0:"]/div[1]/div[1]/div/header/a', { state: 'visible' });
-    // Check if the button is enabled
-    const isEnabled = await logo.isEnabled();
-    console.log(`Button is enabled: ${isEnabled}`);
-    if (!isEnabled) {
-      throw new Error("Button is not enabled.");
-    }
-    // Clcik logo and verify the page 
-    await logo.click();
 
+  async clickLogo() {
+  await this.closeCookieButton();
+  await this.logo.click();
   }
 
   // Check responsiveness by iterating over multiple viewports

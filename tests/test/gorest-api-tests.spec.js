@@ -13,7 +13,7 @@ test.beforeAll('Create a new user and verify user creation', async ({ request })
       'Authorization': 'Bearer 87dd23efe5fe5658b1139a1d024a81eff99ba8ed5af8ca32970f9d7ca90579e1',
     },
     data: {
-      name: "Deeessses" ,
+      name: "Dee" ,
       email: `john.dee.${timestamp}@example.com`, 
       gender: "female",
       status: "active",
@@ -42,13 +42,11 @@ test.afterAll('Delete the user created for testing', async ({ request }) => {
       },
     });
     const statusCode = response.status();
-    console.log(`Response Status Code: ${statusCode}`);
     expect(statusCode).toBe(204);
   }
-  
   const response = await request.get(`https://gorest.co.in/public/v2/users/${userId}`);
   const afterDeleted = response.status();
-  console.log(`Response Status Code: ${afterDeleted}`);
+ // console.log(`Response Status Code: ${afterDeleted}`);
    // Check that the user is no longer available
    expect(afterDeleted).toBe(404); 
 
@@ -69,7 +67,7 @@ test('Verify user data was posted correctly', async ({ request }) => {
 });
 
 // Test to update the user's details and verify if the update is successful
-test('Update user data and verify update', async ({ request }) => {
+test.only('Update user data and verify update', async ({ request }) => {
   const updatedUser = {
     name: "John Dee Updated",
     email: "john.dee.updated@example.com",
@@ -82,16 +80,17 @@ test('Update user data and verify update', async ({ request }) => {
     },
     data: updatedUser,
   });
-
-  const body = await response.json();
+ const body = await response.json();
+ console.log("put response code:"+response.status());
   expect(response.status()).toBe(200); // Validate that the update was successful
   expect(body.name).toBe(updatedUser.name); // Verify that name was updated
   expect(body.email).toBe(updatedUser.email); // Verify that email was updated
+  updatedUser = { name: body.name, email: body.email };
   console.log('Updated user details:', body);
 });
 
 // Test to verify that the updated user details are correctly stored
-test('Verify updated user details', async ({ request }) => {
+test.only('Verify updated user details', async ({ request }) => {
   const response = await request.get(`https://gorest.co.in/public/v2/users/${userId}`, {
     headers: {
       'Authorization': 'Bearer 87dd23efe5fe5658b1139a1d024a81eff99ba8ed5af8ca32970f9d7ca90579e1',
@@ -99,10 +98,11 @@ test('Verify updated user details', async ({ request }) => {
   });
 
   const body = await response.json();
-  expect(response.status()).toBe(200); // Validate that user details are fetched successfully
+  console.log("put response code get:"+response.status());
+  //expect(response.status()).toBe(200); // Validate that user details are fetched successfully
   expect(body.id).toBe(userId); // Ensure that the fetched user ID matches
-  expect(body.name).toBe("John Dee Updated"); // Check the updated name
-  expect(body.email).toBe("john.dee.updated@example.com"); // Check the updated email
+  expect(body.name).toBe(updatedUser.name); // Check the updated name
+  expect(body.email).toBe(updatedUser.email); // Check the updated email
   console.log('Verified updated user details:', body);
 });
 

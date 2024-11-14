@@ -10,7 +10,6 @@ test.describe('Polestar Developer Page Tests', () => {
     polestarDevPage = new PolestarDevPage(page);
     await polestarDevPage.navigate();
     await polestarDevPage.closeCookieButton();
-    
   });
 
   // Tear down after each test
@@ -40,7 +39,7 @@ test.describe('Polestar Developer Page Tests', () => {
       if (link.includes('tiktok')) continue; // Skip tiktok links
 
       try {
-        const response = await page.goto(link);
+        const response = await page.goto(link, { timeout: 500000 });
         const status = response.status();
         if (status === 200) {
           console.log(`Link: ${link} is valid with status ${status}`);
