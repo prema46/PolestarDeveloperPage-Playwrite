@@ -1,3 +1,4 @@
+
 # Playwright Automation Project
 
 This Playwright Automation Project provides an automated testing framework for both UI and API testing. It utilizes the Page Object Model (POM) for a structured, maintainable test design.
@@ -7,7 +8,7 @@ This project automates UI tests for the Polestar Developer page("https://www.pol
 
 ## Getting Started
 
-## System Requirements
+### System Requirements
 
 node >= v18.5.x
 
@@ -30,11 +31,11 @@ Any compatible OS (Windows, Mac, Linux)
 
 cd <project-folder>
 ### Clone the repository:
-Installing
+
 ```bash
 git clone https://github.com/prema46/PolestarDeveloperPage-Playwrite.git
 ```
-
+Installing
 ```bash
 npm install
 npx playwright install
@@ -66,14 +67,6 @@ npx playwright install
 ├── playwright.config.ts                 # Playwright configuration file
 
 ```
-### Test report 
-<picture>
- <img alt="YOUR-ALT-TEXT" src="">
-</picture>
-
-
-
-
 Install the dependencies:
 
 ```bash
@@ -98,6 +91,12 @@ If any issues arise, check the Playwright documentation or run:
 ```bash
 `npx playwright help`
 ```
+
+### Test report 
+Some tests are currently failing due to timeout issues. This is caused by certain operations exceeding the default time limit. However, these tests can be resolved by adjusting the timeout settings in the test configuration and Parallel excution . This update is planned for future revisions to ensure all tests pass without issues.
+
+## Screenshot
+![Project Screenshot](testReport.png)
 ## Common issues:
 
 * Ensure all dependencies are installed with npm install.
