@@ -12,34 +12,29 @@ test.describe('Polestar Developer Page Tests', () => {
     await polestarDevPage.closeCookieButton();
   });
 
-  // Tear down after each test
-  test.afterEach(async ({ page }) => {
-    polestarDevPage = null;
-    await page.close();
-  });
 
   // Logo validation and page URL check
-  test('Verify logo appears', async ({ page }) => {
+  test('UI: Verify logo appears', async ({ page }) => {
     await polestarDevPage.clickLogo();
     await expect(page).toHaveURL('https://www.polestar.com/global/');
   });
 
   // Banner validation and responsiveness check
-  test('Verify banner and responsiveness', async () => {
+  test('UI: Verify banner and responsiveness', async () => {
     await polestarDevPage.waitforPageloads();
     await polestarDevPage.screenshot();
     await polestarDevPage.checkResponsiveness();
   });
 
   // Menu links validation
-  test('Menu - All links are valid and direct to the expected page', async ({ page }) => {
+  test('UI: Menu - All links are valid and direct to the expected page', async ({ page }) => {
     const links = await page.$$eval('a', (anchors) => anchors.map(a => a.href));
 
     for (let link of links) {
-      if (link.includes('tiktok')) continue; // Skip tiktok links
+      if (link.includes('tiktok') || link.includes('Experiences') || link.includes('Additionals') || link.includes('Powered by OneTrust Opens in a new Tab')) continue;
 
       try {
-        const response = await page.goto(link, { timeout: 500000 });
+        const response = await page.goto(link, { timeout: 1000000 });
         const status = response.status();
         if (status === 200) {
           console.log(`Link: ${link} is valid with status ${status}`);

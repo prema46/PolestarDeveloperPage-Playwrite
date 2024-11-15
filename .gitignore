@@ -1,5 +1,7 @@
 # Ignore node_modules folder
 node_modules/
+polestarDeveloperTest.spec.js-snapshots/
+tests\test\polestarDeveloperTest.spec.js-snapshots\*.png
 
 # Ignore logs
 npm-debug.log*
@@ -12,3 +14,4 @@ yarn-error.log*
 # Ignore OS or IDE-specific files
 .DS_Store
 *.log
+*.text

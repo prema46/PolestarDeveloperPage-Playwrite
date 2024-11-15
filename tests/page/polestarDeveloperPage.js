@@ -1,5 +1,6 @@
 // pageObjects/PolestarPage.js
 const { expect } = require('@playwright/test');
+const { timeout } = require('../../playwright.config');
 
 class PolestarDevPage {
   constructor(page) {
@@ -7,8 +8,8 @@ class PolestarDevPage {
    this.logo = this.page.locator('//*[@id="mega-menu-:r0:"]//header/a');
 
      // Define the locator for the text "Welcome" (use correct syntax)
-     this.welcomeText = page.locator('text="Welcome"');
-     this.cookiePopupCloseButton = page.locator('button:text("Accept all")');
+     this.welcomeText = page.locator('text="Welcome"', {timeout:5000});
+     this.cookiePopupCloseButton = page.locator('button:text("Accept all")', { state: 'visible'});
   }
 
   // Navigate to the Polestar Developer page
@@ -18,11 +19,13 @@ class PolestarDevPage {
 
   // Close the cookie popup if it appears
   async closeCookieButton() {
-    await this.welcomeText.waitFor({ state: 'visible', timeout: 5000 });
     const isVisible = await this.welcomeText.isVisible();
     if (isVisible) {
-      console.log('closing the popup window.');
+      // Ensure the element is ready before interacting
+      await this.page.waitForSelector('button:text("Accept all")', { state: 'visible'});
+      //await this.cookiePopupCloseButton.waitFor({ state: 'visible', timeout: 5000 });
       await this.cookiePopupCloseButton.click();
+      console.log('closing the popup window.');
     } else {
       console.log('No popup window found');
     }
@@ -31,6 +34,7 @@ class PolestarDevPage {
 
   async clickLogo() {
   await this.closeCookieButton();
+  await this.page.waitForSelector('//*[@id="mega-menu-:r0:"]//header/a', { state: 'visible'});
   await this.logo.click();
   }
 
@@ -67,8 +71,10 @@ class PolestarDevPage {
 
   // Wait for the page to load (timeout-based)
   async waitforPageloads() {
-    await this.page.waitForTimeout(20000); // Consider using 'waitForLoadState' instead for a more reliable approach
+    await this.page.waitForTimeout(20000); 
   }
+
+  
 
 }
 

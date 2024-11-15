@@ -10,7 +10,7 @@ test.beforeAll('Create a new user and verify user creation', async ({ request })
   const response = await request.post('https://gorest.co.in/public/v2/users', {
     headers: {
       'Content-Type': 'application/json',
-      'Authorization': 'Bearer 87dd23efe5fe5658b1139a1d024a81eff99ba8ed5af8ca32970f9d7ca90579e1',
+      'Authorization': 'Bearer 690d4f1e6f81eb438fbadde15bb0104ea1ab2fce15bdf8082fe06bd5a6026f7d',
     },
     data: {
       name: "Dee" ,
@@ -38,7 +38,7 @@ test.afterAll('Delete the user created for testing', async ({ request }) => {
   if (userId) {
     const response = await request.delete(`https://gorest.co.in/public/v2/users/${userId}`, {
       headers: {
-        'Authorization': 'Bearer 87dd23efe5fe5658b1139a1d024a81eff99ba8ed5af8ca32970f9d7ca90579e1',
+        'Authorization': 'Bearer 690d4f1e6f81eb438fbadde15bb0104ea1ab2fce15bdf8082fe06bd5a6026f7d',
       },
     });
     const statusCode = response.status();
@@ -75,7 +75,7 @@ test.only('Update user data and verify update', async ({ request }) => {
 
   const response = await request.put(`https://gorest.co.in/public/v2/users/${userId}`, {
     headers: {
-      'Authorization': 'Bearer 87dd23efe5fe5658b1139a1d024a81eff99ba8ed5af8ca32970f9d7ca90579e1',
+      'Authorization': 'Bearer 690d4f1e6f81eb438fbadde15bb0104ea1ab2fce15bdf8082fe06bd5a6026f7d',
       'Content-Type': 'application/json',
     },
     data: updatedUser,
@@ -93,7 +93,7 @@ test.only('Update user data and verify update', async ({ request }) => {
 test.only('Verify updated user details', async ({ request }) => {
   const response = await request.get(`https://gorest.co.in/public/v2/users/${userId}`, {
     headers: {
-      'Authorization': 'Bearer 87dd23efe5fe5658b1139a1d024a81eff99ba8ed5af8ca32970f9d7ca90579e1',
+      'Authorization': 'Bearer 690d4f1e6f81eb438fbadde15bb0104ea1ab2fce15bdf8082fe06bd5a6026f7d',
     },
   });
 

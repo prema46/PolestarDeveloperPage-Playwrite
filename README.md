@@ -1,4 +1,24 @@
+########################################################################################################################
+Latest Update on UI and API Test Improvements(11/15)
+########################################################################################################################
+As per the previous updates and instructions, I have made the following improvements to the UI and API tests:
 
+### UI Test Improvements:
+* Playwright Locator Usage: I’ve tried to use Playwright locators as much as possible. However, I wasn’t able to update all locators due to some failing test cases that still need attention.
+* Parallel Testing Enabled: Initially, the test run time was 2.4 minutes for a single browser. After enabling parallel testing, the time has been reduced to approximately 1.2 minutes.
+Cross-Browser Testing: I’ve enabled cross-browser testing, so tests will now run concurrently on Chrome, Firefox, and WebKit. API tests, however, will run Parallely .
+* API Test Improvements:
+* Schema Validation and Payload Handling:* I’ve implemented schema validation and refactored the payload to load data externally, which makes the code more readable and maintainable.
+API Method Tests (GET, POST, PUT, DELETE): All methods have successfully passed. One challenge is that when running the tests for seprate test cases, we need to add the user ID globally. To manage this, I used the "BeforeAll" hook, which required some configurations. I referred to the official Playwright documentation for this (link). Due to time constraints, I wasn't able to fully resolve this issue, so for now, I’ve consolidated all tests into a single test file.
+Test Report:
+Most tests have passed successfully on my end. However, during multiple runs, I observed a few tests failing, which I believe can be improved with continuous observation and adjustments.
+Some elements were difficult to locate. For example, the logo text was placed in a header tag, following an anchor tag. From both an automation and accessibility perspective, this is not recommended—it should be within a button tag instead. I have corrected this in the code (please see the attached screenshot).
+The test failures are primarily due to timeout issues, comparing screenshot thresholds, and difficulties in locating and interacting with elements. These challenges were resolved using trial-and-error methods, but I believe further refinements can be made over time to improve stability.
+Please feel free to review the updates and let me know if you need any additional details or modifications.
+
+########################################################################################################################
+Previous updates and Instructions
+########################################################################################################################
 # Playwright Automation Project
 
 This Playwright Automation Project provides an automated testing framework for both UI and API testing. It utilizes the Page Object Model (POM) for a structured, maintainable test design.
