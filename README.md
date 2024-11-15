@@ -21,6 +21,30 @@ Cross-Browser Testing: I’ve enabled cross-browser testing, so tests will now r
  -  Schema Validation and Payload Handling:* I’ve implemented schema validation and refactored the payload to load data externally, which makes the code more readable and maintainable.
 API Method Tests (GET, POST, PUT, DELETE): All methods have successfully passed. One challenge is that when running the tests for seprate test cases, we need to add the user ID globally. To manage this, I used the "BeforeAll" hook, which required some configurations. I referred to the official Playwright documentation for this (link). Due to time constraints, I wasn't able to fully resolve this issue, so for now, I’ve consolidated all tests into a single test file.
 
+### Project structure update 
+
+
+├── test-results
+│   ├── data
+│   │   └─request_palyloads                   # Generated test result HTML report
+              └─user.json
+        └─response_schemas  
+             └─userschemas.json
+├── tests
+│   ├── pages                            # Page classes for UI components following the POM pattern
+│   │   └── polestarDeveloperPage.js    # Page Object for Polestar Developer Page
+        └── gorestObjectPage.js 
+│   ├── services                         # Service classes for API interactions
+│   │   └── not updated yet              # Placeholder for future API service classes
+│   ├── utils                            # Utilities and helper functions for reusable code
+│   │   └──  schemasValidators.js              # Placeholder for future utility functions
+│   ├── tests                            # Test scripts for both UI and API
+│   │   ├── polestarDeveloperTest.js    # Test script for Polestar Developer Page (UI tests)
+│   │   ├── gorest-api-tests.spec.js    # API positive and negative validation test cases
+│   │   └── gorest-api-NegativeTests.spec.js  # API negative test case file for invalid scenarios
+├── reports                              # Folder for test reports (HTML, screenshots)
+├── playwright.config.ts                 # Playwright configuration file
+
 
 ### Test Report:
 Most tests have passed successfully on my end. However, during multiple runs, I observed a few tests failing, which I believe can be improved with continuous observation and adjustments.
