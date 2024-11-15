@@ -5,8 +5,6 @@
 -----------------------------------------------------------------------------------------------------------
 
 
-As per the previous updates and instructions, I have made the following improvements to the UI and API tests:
-
 ### UI Test Improvements:
 __ Playwright Locator Usage: __ I’ve tried to use Playwright locators as much as possible. However, I wasn’t able to update all locators due to some failing test cases that still need attention.
 
