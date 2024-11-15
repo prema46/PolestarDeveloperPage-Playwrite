@@ -21,7 +21,7 @@ Most tests have passed successfully on my end. However, during multiple runs, I 
 Some elements were difficult to locate. `For example, ` the logo text was placed in a header tag, following an anchor tag. From both an automation and accessibility perspective, this is not recommended—it should be within a button tag instead. I have corrected this in the code (please see the attached screenshot).
 
 ## Screenshot
-![Project Screenshot](Screenshot 2024-11-15 113741.png)
+![Project Screenshot]('Screenshot 2024-11-15 113741.png')
 
 The test failures are primarily due to timeout issues, comparing screenshot thresholds, and difficulties in locating and interacting with elements. These challenges were resolved using trial-and-error methods, but I believe further refinements can be made over time to improve stability.
 Please feel free to review the updates and let me know if you need any additional details or modifications.
