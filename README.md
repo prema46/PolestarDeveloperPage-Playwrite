@@ -22,6 +22,7 @@ Cross-Browser Testing: I’ve enabled cross-browser testing, so tests will now r
 API Method Tests (GET, POST, PUT, DELETE): All methods have successfully passed. One challenge is that when running the tests for seprate test cases, we need to add the user ID globally. To manage this, I used the "BeforeAll" hook, which required some configurations. I referred to the official Playwright documentation for this (link). Due to time constraints, I wasn't able to fully resolve this issue, so for now, I’ve consolidated all tests into a single test file.
 
 ### Project structure update 
+```bash
 
 
 ├── test-results
@@ -44,6 +45,8 @@ API Method Tests (GET, POST, PUT, DELETE): All methods have successfully passed.
 │   │   └── gorest-api-NegativeTests.spec.js  # API negative test case file for invalid scenarios
 ├── reports                              # Folder for test reports (HTML, screenshots)
 ├── playwright.config.ts                 # Playwright configuration file
+
+```
 
 
 ### Test Report:
