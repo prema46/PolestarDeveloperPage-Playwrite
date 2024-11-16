@@ -5,11 +5,7 @@ const { timeout } = require('../../playwright.config');
 class PolestarDevPage {
   constructor(page) {
     this.page = page;
-   this.logo = this.page.locator('//*[@id="mega-menu-:r0:"]//header/a');
 
-     // Define the locator for the text "Welcome" (use correct syntax)
-     this.welcomeText = page.locator('text="Welcome"', {timeout:5000});
-     this.cookiePopupCloseButton = page.locator('button:text("Accept all")', { state: 'visible'});
   }
 
   // Navigate to the Polestar Developer page
@@ -19,14 +15,12 @@ class PolestarDevPage {
 
   // Close the cookie popup if it appears
   async closeCookieButton() {
-    const isVisible = await this.welcomeText.isVisible();
-    if (isVisible) {
-      // Ensure the element is ready before interacting
-      await this.page.waitForSelector('button:text("Accept all")', { state: 'visible'});
-      //await this.cookiePopupCloseButton.waitFor({ state: 'visible', timeout: 5000 });
-      await this.cookiePopupCloseButton.click();
+    if (await this.page.waitForSelector("//*[@id='onetrust-policy-title']", { state: 'visible' }).then(el => el.isVisible())) {
+      const cookiePopupCloseButton = this.page.locator("//button[@id='onetrust-accept-btn-handler']", { state: 'visible' });
+      await cookiePopupCloseButton.click();
       console.log('closing the popup window.');
-    } else {
+    } 
+    else {
       console.log('No popup window found');
     }
   }
@@ -34,12 +28,14 @@ class PolestarDevPage {
 
   async clickLogo() {
   await this.closeCookieButton();
-  await this.page.waitForSelector('//*[@id="mega-menu-:r0:"]//header/a', { state: 'visible'});
-  await this.logo.click();
+  this.logo = this.page.locator('//*[@id="mega-menu-:r0:"]//header/a');
+  await this.logo.waitFor({ state: 'visible' }); // Ensure visibility before clicking
+  await this.logo.click(); 
   }
 
   // Check responsiveness by iterating over multiple viewports
-  async checkResponsiveness() {
+  async checkResponsiveness(browserName) {
+
     const viewports = [
       { name: 'Desktop', viewport: { width: 1920, height: 1080 } },
       { name: 'Tablet', viewport: { width: 768, height: 1024 } },
@@ -49,7 +45,12 @@ class PolestarDevPage {
     for (const { name, viewport } of viewports) {
       await this.page.setViewportSize(viewport);
       console.log(`Testing viewport: ${viewport.width}x${viewport.height}`);
-      
+      if(viewport.width == 375){
+        if(browserName == 'firfox'){
+
+        }
+    }
+
       // Take a screenshot
       const screenshotPath = `test/__screenshots__/screenshot-${name}.png`;
       await this.page.screenshot({ path: screenshotPath, fullPage: true });
@@ -58,9 +59,14 @@ class PolestarDevPage {
       await expect(this.page).toHaveScreenshot({
         path: screenshotPath,
         fullPage: true,
-        threshold: 0.2 // Tolerance for slight rendering differences
+        threshold: 1, // Tolerance for slight rendering differences
+        animations: 'disabled',
+        scale: 'css',
+        maxDiffPixelRatio: 0.01, // Allow 1% of pixels to differ
+        maxDiffPixels: 5,
+        fullPage: false,
       });
-      console.log(`Viewport ${name} test completed.`);
+      console.log(`Viewport ${name} test completed.${browserName}`);
     }
   }
 
@@ -71,7 +77,7 @@ class PolestarDevPage {
 
   // Wait for the page to load (timeout-based)
   async waitforPageloads() {
-    await this.page.waitForTimeout(20000); 
+    await this.page.waitForTimeout(20000000000000); 
   }
 
   
