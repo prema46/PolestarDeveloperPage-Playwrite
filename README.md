@@ -4,7 +4,7 @@
 
 ----------------------------------------------------------------------------------------------------------
 
-##Improvements Made for Testing Efficiency
+## Improvements Made for Testing Efficiency
 ### Enhanced Locator Strategy:
 Since Playwright locators were harder to find in WebKit, I switched to using CSS selectors for improved reliability and consistency. This change also enhanced test stability across all browsers.
 
