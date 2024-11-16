@@ -1,5 +1,20 @@
 --------------------------------------------------------------------------------------------------------------
 
+### New updates fix flaky tests and (11/16)
+
+----------------------------------------------------------------------------------------------------------
+
+##Improvements Made for Testing Efficiency
+### Enhanced Locator Strategy:
+Since Playwright locators were harder to find in WebKit, I switched to using CSS selectors for improved reliability and consistency. This change also enhanced test stability across all browsers.
+
+### Optimized API and URL Validation:
+API testing and URL validation are browser-independent. To save time, I configured these tests to run only once, instead of across multiple browsers. This optimization significantly reduced the overall test execution time by 2.6m
+
+![Project Screenshot](All tests passed.png)
+
+--------------------------------------------------------------------------------------------------------------
+
 ### Latest Update on UI and API Test Improvements(11/15)
 
 -----------------------------------------------------------------------------------------------------------
