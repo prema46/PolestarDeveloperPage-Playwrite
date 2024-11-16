@@ -11,7 +11,7 @@ Since Playwright locators were harder to find in WebKit, I switched to using CSS
 ### Optimized API and URL Validation:
 API testing and URL validation are browser-independent. To save time, I configured these tests to run only once, instead of across multiple browsers. This optimization significantly reduced the overall test execution time by 2.6m
 
-![Project Screenshot](All tests passed.png)
+![Project Screenshot](Alltestspassed.png).
 
 --------------------------------------------------------------------------------------------------------------
 
