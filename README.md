@@ -44,7 +44,6 @@ npx playwright install
 ### Project structure
 
 * Page Object Model (POM): Following the POM pattern for the UI components and API validation.
-* ` Not updated yet: ` folder is For future updates, indicating that these folders and files are placeholders and will be updated later to avoid hardcoding and improve maintainability.
 * Readable: Avoiding hardcoded values ensures better readability and flexibility for future changes.
 
 ```bash
