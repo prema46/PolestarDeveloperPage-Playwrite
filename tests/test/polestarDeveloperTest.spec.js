@@ -16,8 +16,7 @@ test.describe('Polestar Developer Page Tests', () => {
   // Logo validation and page URL check
   test('UI: Verify logo appears', async ({ page }) => {
     await polestarDevPage.clickLogo();
-    console.log("Doen testing  :)")
-   // await expect(page).toHaveURL('https://www.polestar.com/global/developer/get-started/');
+    await expect(page).toHaveURL('https://www.polestar.com/global/developer/get-started/');
   });
 
   // Banner validation and responsiveness check
