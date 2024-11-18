@@ -8,7 +8,7 @@ module.exports = defineConfig({
   reporter: [['html', { outputFolder: 'reports' }], ['json', { outputFile: 'reports/test-results.json' }]],
   workers: 5, 
   use: {
-    baseURL: 'https://www.polestar.com',
+    baseURL: 'https://www.polestar.com/se/developer/get-started/',
     headless:true,
     ignoreHTTPSErrors: true, // Ignore HTTPS errors
   },
