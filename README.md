@@ -1,83 +1,4 @@
---------------------------------------------------------------------------------------------------------------
 
-### New updates fixed flaky tests and Testing Efficiency (11/16)
-
-----------------------------------------------------------------------------------------------------------
-
-## Improvements Made for Testing Efficiency
-### Enhanced Locator Strategy:
-Since Playwright locators were harder to find in WebKit, I switched to using CSS selectors for improved reliability and consistency. This change also enhanced test stability across all browsers.
-
-### Optimized API and URL Validation:
-API testing and URL validation are browser-independent. To save time, I configured these tests to run only once, instead of across multiple browsers. This optimization significantly reduced the overall test execution time by 2.6m
-
-![Project Screenshot](Alltestspassed.png).
-
---------------------------------------------------------------------------------------------------------------
-
-### Latest Update on UI and API Test Improvements(11/15)
-
------------------------------------------------------------------------------------------------------------
-
-
-### UI Test Improvements:
-__ Playwright Locator Usage: __ I’ve tried to use Playwright locators as much as possible. However, I wasn’t able to update all locators due to some failing test cases that still need attention.
-
-** Parallel Testing Enabled: **Initially, the test run time was 2.4 minutes for a single browser. After enabling parallel testing, the time has been reduced to approximately 1.2 minutes.
-
-
-Cross-Browser Testing: I’ve enabled cross-browser testing, so tests will now run concurrently on Chrome, Firefox, and WebKit. API tests, however, will run Parallely .
-
-
-** API Test Improvements:**
-
- -  Schema Validation and Payload Handling:* I’ve implemented schema validation and refactored the payload to load data externally, which makes the code more readable and maintainable.
-API Method Tests (GET, POST, PUT, DELETE): All methods have successfully passed. One challenge is that when running the tests for seprate test cases, we need to add the user ID globally. To manage this, I used the "BeforeAll" hook, which required some configurations. I referred to the official Playwright documentation for this (link). Due to time constraints, I wasn't able to fully resolve this issue, so for now, I’ve consolidated all tests into a single test file.
-
-### Project structure update 
-```bash
-
-
-├── test-results
-│   ├── data
-│   │   └─request_palyloads                   # Generated test result HTML report
-              └─user.json
-        └─response_schemas  
-             └─userschemas.json
-├── tests
-│   ├── pages                            # Page classes for UI components following the POM pattern
-│   │   └── polestarDeveloperPage.js    # Page Object for Polestar Developer Page
-        └── gorestObjectPage.js 
-│   ├── services                         # Service classes for API interactions
-│   │   └── not updated yet              # Placeholder for future API service classes
-│   ├── utils                            # Utilities and helper functions for reusable code
-│   │   └──  schemasValidators.js              # Placeholder for future utility functions
-│   ├── tests                            # Test scripts for both UI and API
-│   │   ├── polestarDeveloperTest.js    # Test script for Polestar Developer Page (UI tests)
-│   │   ├── gorest-api-tests.spec.js    # API positive and negative validation test cases
-│   │   └── gorest-api-NegativeTests.spec.js  # API negative test case file for invalid scenarios
-├── reports                              # Folder for test reports (HTML, screenshots)
-├── playwright.config.ts                 # Playwright configuration file
-
-```
-
-
-### Test Report:
-Most tests have passed successfully on my end. However, during multiple runs, I observed a few tests failing, which I believe can be improved with continuous observation and adjustments.
-Some elements were difficult to locate. `For example, ` the logo text was placed in a header tag, following an anchor tag. From both an automation and accessibility perspective, this is not recommended—it should be within a button tag instead. I have corrected this in the code (please see the attached screenshot).
-
-## Screenshot
-![Project Screenshot](Most of them passed - enabled parallel.png)
-
-The test failures are primarily due to timeout issues, comparing screenshot thresholds, and difficulties in locating and interacting with elements. These challenges can be easily fixed by observing behavior, but I believe further refinements can be made over time to improve stability.
-Please feel free to review the updates and let me know if you need any additional details or modifications.
-
-
------------------------------------------------------------------------------------------------------------
-
-Previous updates and Instructions
-
------------------------------------------------------------------------------------------------------------
 # Playwright Automation Project
 
 This Playwright Automation Project provides an automated testing framework for both UI and API testing. It utilizes the Page Object Model (POM) for a structured, maintainable test design.
@@ -130,20 +51,24 @@ npx playwright install
 
 ├── test-results
 │   ├── data
-│   │   └── index.html                  # Generated test result HTML report
+│   │   ├── request_payloads
+│   │   │   └── user.json
+│   │   └── response_schemas
+│   │       └── user_schemas.json
 ├── tests
-│   ├── pages                            # Page classes for UI components following the POM pattern
-│   │   └── polestarDeveloperPage.js    # Page Object for Polestar Developer Page
-│   ├── services                         # Service classes for API interactions
-│   │   └── not updated yet              # Placeholder for future API service classes
-│   ├── utils                            # Utilities and helper functions for reusable code
-│   │   └── not updated yet              # Placeholder for future utility functions
-│   ├── tests                            # Test scripts for both UI and API
-│   │   ├── polestarDeveloperTest.js    # Test script for Polestar Developer Page (UI tests)
-│   │   ├── gorest-api-tests.spec.js    # API positive and negative validation test cases
-│   │   └── gorest-api-NegativeTests.spec.js  # API negative test case file for invalid scenarios
-├── reports                              # Folder for test reports (HTML, screenshots)
-├── playwright.config.ts                 # Playwright configuration file
+│   ├── pages                             # Page classes for UI components (POM pattern)
+│   │   ├── polestarDeveloperPage.js
+│   │   └── gorestObjectPage.js
+│   ├── services                          # API interaction classes (future updates planned)
+│   ├── utils                             # Utility functions (schema validators and helpers)
+│   │   └── schemaValidators.js
+│   ├── tests                             # Test scripts
+│   │   ├── polestarDeveloperTest.js      # UI test for Polestar Developer Page
+│   │   ├── gorest-api-tests.spec.js      # Positive and negative API tests
+│   │   └── gorest-api-NegativeTests.spec.js
+├── reports                               # Test reports (HTML, screenshots)
+├── playwright.config.ts                  # Playwright configuration
+                                               # Playwright configuration file
 
 ```
 Install the dependencies:
@@ -170,13 +95,44 @@ If any issues arise, check the Playwright documentation or run:
 ```bash
 `npx playwright help`
 ```
+--------------------------------------------------------------------------------------------------------
 
-### Test report 
-Some tests are currently failing due to timeout issues. This is caused by certain operations exceeding the default time limit. However, these tests can be resolved by adjusting the timeout settings in the test configuration and Parallel excution . This update is planned for future revisions to ensure all tests pass without issues.
+# Project Refinements
 
-## Screenshot
-![Project Screenshot](testReport.png)
-## Common issues:
+--------------------------------------------------------------------------------------------------------
+## Locator Strategy:
 
-* Ensure all dependencies are installed with npm install.
-* If tests fail due to timeouts, adjust the timeout settings in playwright.config.ts.
+Switched to CSS selectors for better reliability and consistency, especially in WebKit.
+## Parallel Testing:
+
+Reduced test run time from 1.6 minute (single browser) to approximately 3 minutes with parallel execution, depending on response times.
+
+# API validation  and Cross-Browser Testing:
+
+1. Enabled concurrent testing on Chrome, Firefox, and WebKit.
+2. Configured API tests to run only once to save execution time.
+3. implements Schema Validation and Payload Refactoring : Added schema validation for API responses and externalized payload data for improved readability and maintainability.
+4 API Tests (GET, POST, PUT, DELETE):
+  4.1 Consolidated tests into a single file using a "BeforeAll" hook to manage user ID globally.
+4.2 Successfully validated both positive and negative scenarios.
+
+# Accessibility Fixes:
+
+Improved locators for elements like logo text misplaced within anchor tags to enhance automation and accessibility.
+
+## Known Issues and Fixes
+1. Flaky tests due to timeouts and screenshot threshold comparisons are under observation for refinement.
+2. Locator challenges for specific elements have been resolved, and restructuring recommendations were implemented to improve stability.
+
+   
+## Test Reports
+Most tests have passed successfully across all browsers, with significant improvements in execution time and accuracy. Parallel testing and schema validation have optimized the framework for efficiency.
+### Screenshot
+![Project Screenshot](Alltestspassed.png)
+
+## Next Steps
+1. Enhance API service classes in the services folder.
+2. Refine flaky tests to improve reliability.
+3. Fully resolve locator issues in UI tests.
+4. Modularize API tests further for scalability.
+
