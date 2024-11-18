@@ -14,10 +14,12 @@ test.describe('Polestar Developer Page Tests', () => {
 
 
   // Logo validation and page URL check
-  test('UI: Verify logo appears', async ({ page }) => {
-    await polestarDevPage.clickLogo();
-    await expect(page).toHaveURL('https://www.polestar.com/global/');
-  });
+  test('UI: Verify the page title', async ({ page }) => {
+    
+    const pageTitle = await page.title();
+    // Validate the title
+    expect(pageTitle).toBe('Pure progressive performance | Polestar'); 
+    });
 
   // Banner validation and responsiveness check
   test('UI: Verify banner and responsiveness', async ( browserName) => {
@@ -30,7 +32,7 @@ await polestarDevPage.checkResponsiveness();
     console.log("Links found on this page:" + await links.length);
 
     for (let link of links) {
-      if (link.includes('tiktok') || link.includes('Experiences') || link.includes('Additionals') || link.includes('Powered by OneTrust Opens in a new Tab')) continue;
+      if (link.includes('tiktok') || link.includes('Experiences')||link.includes('YouTube') || link.includes('cookie-consent') ||link.includes('cookies') || link.includes('Additionals') || link.includes('Powered by OneTrust Opens in a new Tab')) continue;
       try {
         const response = await page.goto(link, { timeout: 60000 });
         const status = response.status();

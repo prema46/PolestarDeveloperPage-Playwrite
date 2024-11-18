@@ -1,7 +1,7 @@
 {
   "config": {
-    "configFile": "C:\\Users\\dptes.INDIA\\projects\\PoleStar-Developer-playwrite\\PolestarDeveloperPage-Playwrite\\playwright.config.js",
-    "rootDir": "C:/Users/dptes.INDIA/projects/PoleStar-Developer-playwrite/PolestarDeveloperPage-Playwrite/tests",
+    "configFile": "C:\\Users\\dptes.INDIA\\projects\\testRuns2\\PolestarDeveloperPage-Playwrite\\playwright.config.js",
+    "rootDir": "C:/Users/dptes.INDIA/projects/testRuns2/PolestarDeveloperPage-Playwrite/tests",
     "forbidOnly": false,
     "fullyParallel": true,
     "globalSetup": null,
@@ -11,7 +11,7 @@
     "grepInvert": null,
     "maxFailures": 0,
     "metadata": {
-      "actualWorkers": 4
+      "actualWorkers": 5
     },
     "preserveOutput": "always",
     "reporter": [
@@ -35,13 +35,13 @@
     "quiet": false,
     "projects": [
       {
-        "outputDir": "C:/Users/dptes.INDIA/projects/PoleStar-Developer-playwrite/PolestarDeveloperPage-Playwrite/test-results",
+        "outputDir": "C:/Users/dptes.INDIA/projects/testRuns2/PolestarDeveloperPage-Playwrite/test-results",
         "repeatEach": 1,
         "retries": 0,
         "metadata": {},
         "id": "API",
         "name": "API",
-        "testDir": "C:/Users/dptes.INDIA/projects/PoleStar-Developer-playwrite/PolestarDeveloperPage-Playwrite/tests",
+        "testDir": "C:/Users/dptes.INDIA/projects/testRuns2/PolestarDeveloperPage-Playwrite/tests",
         "testIgnore": [],
         "testMatch": [
           "**/*.@(spec|test).?(c|m)[jt]s?(x)"
@@ -49,13 +49,13 @@
         "timeout": 180000
       },
       {
-        "outputDir": "C:/Users/dptes.INDIA/projects/PoleStar-Developer-playwrite/PolestarDeveloperPage-Playwrite/test-results",
+        "outputDir": "C:/Users/dptes.INDIA/projects/testRuns2/PolestarDeveloperPage-Playwrite/test-results",
         "repeatEach": 1,
         "retries": 0,
         "metadata": {},
         "id": "chromium",
         "name": "chromium",
-        "testDir": "C:/Users/dptes.INDIA/projects/PoleStar-Developer-playwrite/PolestarDeveloperPage-Playwrite/tests",
+        "testDir": "C:/Users/dptes.INDIA/projects/testRuns2/PolestarDeveloperPage-Playwrite/tests",
         "testIgnore": [],
         "testMatch": [
           "**/*.@(spec|test).?(c|m)[jt]s?(x)"
@@ -63,13 +63,13 @@
         "timeout": 180000
       },
       {
-        "outputDir": "C:/Users/dptes.INDIA/projects/PoleStar-Developer-playwrite/PolestarDeveloperPage-Playwrite/test-results",
+        "outputDir": "C:/Users/dptes.INDIA/projects/testRuns2/PolestarDeveloperPage-Playwrite/test-results",
         "repeatEach": 1,
         "retries": 0,
         "metadata": {},
         "id": "firefox",
         "name": "firefox",
-        "testDir": "C:/Users/dptes.INDIA/projects/PoleStar-Developer-playwrite/PolestarDeveloperPage-Playwrite/tests",
+        "testDir": "C:/Users/dptes.INDIA/projects/testRuns2/PolestarDeveloperPage-Playwrite/tests",
         "testIgnore": [],
         "testMatch": [
           "**/*.@(spec|test).?(c|m)[jt]s?(x)"
@@ -77,13 +77,13 @@
         "timeout": 180000
       },
       {
-        "outputDir": "C:/Users/dptes.INDIA/projects/PoleStar-Developer-playwrite/PolestarDeveloperPage-Playwrite/test-results",
+        "outputDir": "C:/Users/dptes.INDIA/projects/testRuns2/PolestarDeveloperPage-Playwrite/test-results",
         "repeatEach": 1,
         "retries": 0,
         "metadata": {},
         "id": "webkit",
         "name": "webkit",
-        "testDir": "C:/Users/dptes.INDIA/projects/PoleStar-Developer-playwrite/PolestarDeveloperPage-Playwrite/tests",
+        "testDir": "C:/Users/dptes.INDIA/projects/testRuns2/PolestarDeveloperPage-Playwrite/tests",
         "testIgnore": [],
         "testMatch": [
           "**/*.@(spec|test).?(c|m)[jt]s?(x)"
@@ -99,82 +99,151 @@
   },
   "suites": [
     {
-      "title": "test\\gorest-api-Negativetests.spec.js",
-      "file": "test/gorest-api-Negativetests.spec.js",
+      "title": "test\\reqresAPI.spec.js",
+      "file": "test/reqresAPI.spec.js",
       "column": 0,
       "line": 0,
-      "specs": [
+      "specs": [],
+      "suites": [
         {
-          "title": "API Negative Test - Missing required field in POST request",
-          "ok": true,
-          "tags": [],
-          "tests": [
+          "title": "API: User Registration and Update API Tests",
+          "file": "test/reqresAPI.spec.js",
+          "line": 15,
+          "column": 6,
+          "specs": [
             {
-              "timeout": 180000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "webkit",
-              "projectName": "webkit",
-              "results": [
+              "title": "POST /users - should create a new user with valid data",
+              "ok": true,
+              "tags": [],
+              "tests": [
                 {
-                  "workerIndex": 0,
-                  "status": "passed",
-                  "duration": 1749,
-                  "errors": [],
-                  "stdout": [
+                  "timeout": 180000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "API",
+                  "projectName": "API",
+                  "results": [
                     {
-                      "text": "Authorization token is set up before all tests\n"
+                      "workerIndex": 0,
+                      "status": "passed",
+                      "duration": 773,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2024-11-18T14:46:08.164Z",
+                      "attachments": []
                     }
                   ],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2024-11-16T17:53:28.794Z",
-                  "attachments": []
+                  "status": "expected"
                 }
               ],
-              "status": "expected"
-            }
-          ],
-          "id": "7fb0d98bdb50e37fc068-0df257746621900f4e50",
-          "file": "test/gorest-api-Negativetests.spec.js",
-          "line": 30,
-          "column": 1
-        },
-        {
-          "title": "API Negative Test - Invalid User ID in PUT request",
-          "ok": true,
-          "tags": [],
-          "tests": [
+              "id": "4ca8c6cb7248a8f0c8ca-ac6aad1e65353c41428c",
+              "file": "test/reqresAPI.spec.js",
+              "line": 16,
+              "column": 3
+            },
             {
-              "timeout": 180000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "webkit",
-              "projectName": "webkit",
-              "results": [
+              "title": "API: Validate users data are expected",
+              "ok": true,
+              "tags": [],
+              "tests": [
                 {
-                  "workerIndex": 1,
-                  "status": "passed",
-                  "duration": 1634,
-                  "errors": [],
-                  "stdout": [
+                  "timeout": 180000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "API",
+                  "projectName": "API",
+                  "results": [
                     {
-                      "text": "Authorization token is set up before all tests\n"
+                      "workerIndex": 1,
+                      "status": "passed",
+                      "duration": 312,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2024-11-18T14:46:08.258Z",
+                      "attachments": []
                     }
                   ],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2024-11-16T17:53:28.881Z",
-                  "attachments": []
+                  "status": "expected"
                 }
               ],
-              "status": "expected"
+              "id": "4ca8c6cb7248a8f0c8ca-4f7ac924bef302b40916",
+              "file": "test/reqresAPI.spec.js",
+              "line": 24,
+              "column": 3
+            },
+            {
+              "title": "API: Update user data using PUT request and verify response",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 180000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "API",
+                  "projectName": "API",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "status": "passed",
+                      "duration": 711,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Response body: {\n  email: \u001b[32m'george.updated@reqres.in'\u001b[39m,\n  first_name: \u001b[32m'George'\u001b[39m,\n  last_name: \u001b[32m'Updated'\u001b[39m,\n  avatar: \u001b[32m'https://reqres.in/img/faces/1-updated.jpg'\u001b[39m,\n  updatedAt: \u001b[32m'2024-11-18T14:46:08.403Z'\u001b[39m\n}\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2024-11-18T14:46:08.266Z",
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "4ca8c6cb7248a8f0c8ca-51190e8d3f15820a3acf",
+              "file": "test/reqresAPI.spec.js",
+              "line": 40,
+              "column": 3
+            },
+            {
+              "title": "API: Delete user and verify response",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 180000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "API",
+                  "projectName": "API",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "status": "passed",
+                      "duration": 710,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2024-11-18T14:46:08.233Z",
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "4ca8c6cb7248a8f0c8ca-642ee5e16e856f01c758",
+              "file": "test/reqresAPI.spec.js",
+              "line": 63,
+              "column": 3
             }
-          ],
-          "id": "7fb0d98bdb50e37fc068-591283de350dab3e36f0",
-          "file": "test/gorest-api-Negativetests.spec.js",
-          "line": 51,
-          "column": 1
+          ]
         }
       ]
     },
@@ -192,7 +261,7 @@
           "column": 6,
           "specs": [
             {
-              "title": "UI: Verify logo appears",
+              "title": "UI: Verify the page title",
               "ok": true,
               "tags": [],
               "tests": [
@@ -200,35 +269,29 @@
                   "timeout": 180000,
                   "annotations": [],
                   "expectedStatus": "passed",
-                  "projectId": "webkit",
-                  "projectName": "webkit",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 2,
+                      "workerIndex": 4,
                       "status": "passed",
-                      "duration": 10629,
+                      "duration": 6349,
                       "errors": [],
                       "stdout": [
                         {
                           "text": "closing the popup window.\n"
-                        },
-                        {
-                          "text": "No popup window found\n"
-                        },
-                        {
-                          "text": "Doen testing  :)\n"
                         }
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2024-11-16T17:53:28.805Z",
+                      "startTime": "2024-11-18T14:46:08.264Z",
                       "attachments": []
                     }
                   ],
                   "status": "expected"
                 }
               ],
-              "id": "71e2e01f8396c359c226-e575f736fb95391a0919",
+              "id": "71e2e01f8396c359c226-7ededef09b372d2e8435",
               "file": "test/polestarDeveloperTest.spec.js",
               "line": 17,
               "column": 3
@@ -242,13 +305,13 @@
                   "timeout": 180000,
                   "annotations": [],
                   "expectedStatus": "passed",
-                  "projectId": "webkit",
-                  "projectName": "webkit",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 3,
+                      "workerIndex": 5,
                       "status": "passed",
-                      "duration": 13064,
+                      "duration": 11876,
                       "errors": [],
                       "stdout": [
                         {
@@ -275,7 +338,370 @@
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2024-11-16T17:53:28.841Z",
+                      "startTime": "2024-11-18T14:46:10.406Z",
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "71e2e01f8396c359c226-3f67dd2349a702178424",
+              "file": "test/polestarDeveloperTest.spec.js",
+              "line": 25,
+              "column": 3
+            },
+            {
+              "title": "UI: UrlCheck: Menu - All links are valid and direct to the expected page",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 180000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 6,
+                      "status": "passed",
+                      "duration": 85659,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "closing the popup window.\n"
+                        },
+                        {
+                          "text": "Links found on this page:53\n"
+                        },
+                        {
+                          "text": "Link: https://www.polestar.com/global/developer/get-started/#main-content could not be reached. Error: TypeError: Cannot read properties of null (reading 'status')\n"
+                        },
+                        {
+                          "text": "Link: https://www.polestar.com/global/ is valid with status 200\n"
+                        },
+                        {
+                          "text": "Link: https://www.polestar.com/global/spaces/ is valid with status 200\n"
+                        },
+                        {
+                          "text": "Link: https://www.polestar.com/global/polestar-2/ is valid with status 200\n"
+                        },
+                        {
+                          "text": "Link: https://www.polestar.com/global/polestar-2/exterior/ is valid with status 200\n"
+                        },
+                        {
+                          "text": "Link: https://www.polestar.com/global/polestar-3/ is valid with status 200\n"
+                        },
+                        {
+                          "text": "Link: https://www.polestar.com/global/polestar-3/exterior/ is valid with status 200\n"
+                        },
+                        {
+                          "text": "Link: https://www.polestar.com/global/polestar-4/ is valid with status 200\n"
+                        },
+                        {
+                          "text": "Link: https://www.polestar.com/global/charging/ is valid with status 200\n"
+                        },
+                        {
+                          "text": "Link: https://www.polestar.com/global/charging/public-charging/ is valid with status 200\n"
+                        },
+                        {
+                          "text": "Link: https://www.polestar.com/global/charging/home-charging/ is valid with status 200\n"
+                        },
+                        {
+                          "text": "Link: https://www.polestar.com/global/spaces/ is valid with status 200\n"
+                        },
+                        {
+                          "text": "Link: https://www.polestar.com/global/news/ is valid with status 200\n"
+                        },
+                        {
+                          "text": "Link: https://www.polestar.com/global/sustainability/ is valid with status 200\n"
+                        },
+                        {
+                          "text": "Link: https://www.polestar.com/global/about/ is valid with status 200\n"
+                        },
+                        {
+                          "text": "Link: https://www.polestar.com/global/sign-up-newsletter/ is valid with status 200\n"
+                        },
+                        {
+                          "text": "Link: https://additionals.polestar.com/ is valid with status 200\n"
+                        },
+                        {
+                          "text": "Link: https://www.polestar.com/global/experiences/ is valid with status 200\n"
+                        },
+                        {
+                          "text": "Link: https://www.polestar.com/global/ is valid with status 200\n"
+                        },
+                        {
+                          "text": "Link: https://www.polestar.com/global/sign-up-newsletter/?redirect-url=/global/developer/get-started/ is valid with status 200\n"
+                        },
+                        {
+                          "text": "Link: https://www.polestar.com/global/ is valid with status 200\n"
+                        },
+                        {
+                          "text": "Link: https://www.polestar.com/global/polestar-1/ is valid with status 200\n"
+                        },
+                        {
+                          "text": "Link: https://www.polestar.com/global/polestar-2/ is valid with status 200\n"
+                        },
+                        {
+                          "text": "Link: https://www.polestar.com/global/polestar-3/ is valid with status 200\n"
+                        },
+                        {
+                          "text": "Link: https://www.polestar.com/global/polestar-4/ is valid with status 200\n"
+                        },
+                        {
+                          "text": "Link: https://www.polestar.com/global/polestar-5/ is valid with status 200\n"
+                        },
+                        {
+                          "text": "Link: https://www.polestar.com/global/polestar-6/ is valid with status 200\n"
+                        },
+                        {
+                          "text": "Link: https://www.polestar.com/global/polestar-2-bst-edition-230/ is valid with status 200\n"
+                        },
+                        {
+                          "text": "Link: https://www.polestar.com/global/spaces/ is valid with status 200\n"
+                        },
+                        {
+                          "text": "Link: https://www.polestar.com/global/charging/ is valid with status 200\n"
+                        },
+                        {
+                          "text": "Link: https://www.polestar.com/global/events/ is valid with status 200\n"
+                        },
+                        {
+                          "text": "Link: https://www.polestar.com/global/news/ is valid with status 200\n"
+                        },
+                        {
+                          "text": "Link: https://www.polestar.com/global/sustainability/ is valid with status 200\n"
+                        },
+                        {
+                          "text": "Link: https://www.polestar.com/global/about/ is valid with status 200\n"
+                        },
+                        {
+                          "text": "Link: https://www.polestar.com/global/about/careers/ is valid with status 200\n"
+                        },
+                        {
+                          "text": "Link: https://www.polestar.com/global/polestar-design-contest/ is valid with status 200\n"
+                        },
+                        {
+                          "text": "Link: https://media.polestar.com/global/en is valid with status 200\n"
+                        },
+                        {
+                          "text": "Link: https://investors.polestar.com/ failed with status 403\n"
+                        },
+                        {
+                          "text": "Link: https://www.polestar.com/global/vulnerability-disclosure/ is valid with status 200\n"
+                        },
+                        {
+                          "text": "Link: https://www.instagram.com/polestarcars/ is valid with status 200\n"
+                        },
+                        {
+                          "text": "Link: https://www.facebook.com/PolestarCars/ is valid with status 200\n"
+                        },
+                        {
+                          "text": "Link: https://www.youtube.com/polestarcars is valid with status 200\n"
+                        },
+                        {
+                          "text": "Link: https://www.linkedin.com/company/polestarcars/posts/ failed with status 999\n"
+                        },
+                        {
+                          "text": "Link: https://twitter.com/PolestarCars is valid with status 200\n"
+                        },
+                        {
+                          "text": "Link: https://www.instagram.com/polestardesigncommunity/?hl=en is valid with status 200\n"
+                        },
+                        {
+                          "text": "Link: https://polestar.com/global/legal is valid with status 200\n"
+                        },
+                        {
+                          "text": "Link: https://polestar.com/global/legal/ethics/ is valid with status 200\n"
+                        },
+                        {
+                          "text": "Link: https://www.polestar.com/global/accessibility/ is valid with status 200\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2024-11-18T14:46:10.734Z",
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "71e2e01f8396c359c226-114b1dd6da3828325562",
+              "file": "test/polestarDeveloperTest.spec.js",
+              "line": 30,
+              "column": 3
+            },
+            {
+              "title": "UI: Verify the page title",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 180000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 7,
+                      "status": "passed",
+                      "duration": 11152,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "closing the popup window.\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2024-11-18T14:46:10.661Z",
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "71e2e01f8396c359c226-4cf6194092430b53c279",
+              "file": "test/polestarDeveloperTest.spec.js",
+              "line": 17,
+              "column": 3
+            },
+            {
+              "title": "UI: Verify banner and responsiveness",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 180000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 8,
+                      "status": "passed",
+                      "duration": 17792,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "closing the popup window.\n"
+                        },
+                        {
+                          "text": "Testing viewport: 1920x1080\n"
+                        },
+                        {
+                          "text": "Viewport Desktop test completed.undefined\n"
+                        },
+                        {
+                          "text": "Testing viewport: 768x1024\n"
+                        },
+                        {
+                          "text": "Viewport Tablet test completed.undefined\n"
+                        },
+                        {
+                          "text": "Testing viewport: 375x667\n"
+                        },
+                        {
+                          "text": "Viewport Mobile test completed.undefined\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2024-11-18T14:46:10.762Z",
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "71e2e01f8396c359c226-9fde368babe197a517f7",
+              "file": "test/polestarDeveloperTest.spec.js",
+              "line": 25,
+              "column": 3
+            },
+            {
+              "title": "UI: Verify the page title",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 180000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 9,
+                      "status": "passed",
+                      "duration": 10258,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "closing the popup window.\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2024-11-18T14:46:28.405Z",
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "71e2e01f8396c359c226-d192e1136fe691a4e9da",
+              "file": "test/polestarDeveloperTest.spec.js",
+              "line": 17,
+              "column": 3
+            },
+            {
+              "title": "UI: Verify banner and responsiveness",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 180000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 10,
+                      "status": "passed",
+                      "duration": 17432,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "closing the popup window.\n"
+                        },
+                        {
+                          "text": "Testing viewport: 1920x1080\n"
+                        },
+                        {
+                          "text": "Viewport Desktop test completed.undefined\n"
+                        },
+                        {
+                          "text": "Testing viewport: 768x1024\n"
+                        },
+                        {
+                          "text": "Viewport Tablet test completed.undefined\n"
+                        },
+                        {
+                          "text": "Testing viewport: 375x667\n"
+                        },
+                        {
+                          "text": "Viewport Mobile test completed.undefined\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2024-11-18T14:46:29.095Z",
                       "attachments": []
                     }
                   ],
@@ -284,7 +710,7 @@
               ],
               "id": "71e2e01f8396c359c226-f9915b9b130bbf81c5f0",
               "file": "test/polestarDeveloperTest.spec.js",
-              "line": 24,
+              "line": 25,
               "column": 3
             }
           ]
@@ -294,9 +720,9 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2024-11-16T17:53:26.825Z",
-    "duration": 15349.617000000002,
-    "expected": 4,
+    "startTime": "2024-11-18T14:46:06.218Z",
+    "duration": 90871.111,
+    "expected": 11,
     "skipped": 0,
     "unexpected": 0,
     "flaky": 0
