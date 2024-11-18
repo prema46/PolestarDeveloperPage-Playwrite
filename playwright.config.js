@@ -10,6 +10,7 @@ module.exports = defineConfig({
   use: {
     baseURL: 'https://www.polestar.com',
     headless:true,
+    ignoreHTTPSErrors: true, // Ignore HTTPS errors
   },
   snapshots: {
     storage: './test-results/screenshots',  // Custom path for snapshots
