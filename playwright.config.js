@@ -19,22 +19,23 @@ module.exports = defineConfig({
     {
       name: 'API',
       grep: /API:/,      // Only include API tests
-      use: { browserName: 'API' }, // Can use any single browser for API tests
+      use: { browserName: 'API',  ignoreHTTPSErrors: true,}, // Can use any single browser for API tests
     },
     {
+      
      name: 'chromium',
      grepInvert: /API:/, // Exclude API tests
-     use: { browserName: 'chromium' },
+     use: { browserName: 'chromium', ignoreHTTPSErrors: true,},
     },
     {
       name: 'firefox',
       grepInvert: [/API:/, /UrlCheck:/], // Exclude tests with these patterns
-      use: { browserName: 'firefox' },
+      use: { browserName: 'firefox', ignoreHTTPSErrors: true,},
     },
     {
       name: 'webkit',
       grepInvert: [/API:/, /UrlCheck:/], // Exclude tests with these patterns
-      use: { browserName: 'webkit' },
+      use: { browserName: 'webkit',  ignoreHTTPSErrors: true, },
     },
   ],
 
